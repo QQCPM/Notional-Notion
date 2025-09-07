@@ -1,0 +1,122 @@
+{
+  "template_version": "1.0",
+  "description": "Daily page template for AI Task Continuity System",
+  "structure": {
+    "header": {
+      "type": "heading_1",
+      "content": "AI Daily Planner with Completion Tracking - {date}"
+    },
+    "left_column": {
+      "type": "column_list",
+      "column_ratio": 0.5,
+      "blocks": [
+        {
+          "type": "callout",
+          "icon": "🎯",
+          "title": "Priorities",
+          "content_type": "checklist",
+          "category_filter": "Priorities"
+        },
+        {
+          "type": "callout", 
+          "icon": "🔄",
+          "title": "Daily Habits",
+          "content_type": "checklist",
+          "category_filter": "Daily Habits"
+        },
+        {
+          "type": "callout",
+          "icon": "📝",
+          "title": "Strategic Notes",
+          "content_type": "text",
+          "placeholder": "Key insights and strategic thinking for today..."
+        },
+        {
+          "type": "callout",
+          "icon": "💼",
+          "title": "Feature Jobs",
+          "content_type": "job_list", 
+          "description": "Priority job applications for today"
+        }
+      ]
+    },
+    "right_column": {
+      "type": "column_list",
+      "column_ratio": 0.5,
+      "blocks": [
+        {
+          "type": "callout",
+          "icon": "⏰",
+          "title": "Schedule",
+          "content_type": "time_blocks",
+          "note": "Day-specific items (don't carry over)"
+        },
+        {
+          "type": "heading_2",
+          "content": "Tasks"
+        },
+        {
+          "type": "task_categories",
+          "categories": [
+            {
+              "name": "Application Focus",
+              "icon": "📋",
+              "category_filter": "Application Focus"
+            },
+            {
+              "name": "Research & Learning", 
+              "icon": "📚",
+              "category_filter": "Research & Learning"
+            },
+            {
+              "name": "Networking",
+              "icon": "🤝",
+              "category_filter": "Networking"
+            },
+            {
+              "name": "Pipeline Development",
+              "icon": "🔧",
+              "category_filter": "Pipeline Development"
+            }
+          ]
+        }
+      ]
+    },
+    "bottom_section": {
+      "type": "divider_then_databases",
+      "databases": [
+        {
+          "name": "Plan AI - Active Tasks Only",
+          "database_id": "{plan_ai_database_id}",
+          "view_type": "embedded"
+        },
+        {
+          "name": "Job Tracker",
+          "database_id": "{job_tracker_database_id}",
+          "view_type": "embedded"
+        }
+      ]
+    }
+  },
+  "styling": {
+    "callout_colors": {
+      "Priorities": "yellow",
+      "Daily Habits": "blue",
+      "Strategic Notes": "green",
+      "Feature Jobs": "purple",
+      "Schedule": "orange"
+    },
+    "task_category_colors": {
+      "Application Focus": "red",
+      "Research & Learning": "blue", 
+      "Networking": "green",
+      "Pipeline Development": "purple"
+    }
+  },
+  "content_formatting": {
+    "feature_jobs_format": "- [ ] {job_title} (Deadline: {deadline}) [{priority}]",
+    "task_format": "- [ ] {task_name}",
+    "checkbox_unchecked": "☐",
+    "checkbox_checked": "☑️"
+  }
+}
